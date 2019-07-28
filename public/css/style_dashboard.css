@@ -1,0 +1,255 @@
+/*
+    Estilo
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #000000;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+#collapse-menu{
+    transform: translateY(-12%);
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+i,
+span {
+    display: inline-block;
+}
+
+/* ---------------------------------------------------
+   estilo do menu
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    transition: all 0.3s;
+}
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar.active .sidebar-header{
+    display: block;
+}
+
+#sidebar ul li a {
+    text-align: left;
+}
+
+#sidebar.active ul li a {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+#sidebar.active ul li a i {
+    margin-right: 0;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+#sidebar.active ul ul a {
+    padding: 10px !important;
+}
+
+#sidebar.active .dropdown-toggle::after {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+#sidebar .sidebar-header {
+    margin-left: -15%;
+    background: rgb(0, 0, 0);
+}
+#foto{
+    margin-left: 80%;
+    margin-bottom: 20%;
+    transform: rotate(-15deg);
+}
+
+#sidebar .sidebar-header strong {
+    display: none;
+    font-size: 1.8em;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: rgb(0, 0, 0);
+}
+.perfil{
+    margin-bottom: 10px;
+}
+.fa-trash, .fa-pen-square{
+    color: #ffffff;
+    font-size: 15px;
+    margin-left: 60px;
+}
+#collapse_options{
+    background-color: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; 
+    height: 50px;
+}
+.fa-angle-down{
+    margin-top: 10px;
+}
+.fa-sign-out-alt, #sair{
+    color: rgb(253, 213, 0);
+    font-size: 16px;
+}
+.fa-sign-out-alt:hover, #sair:hover{
+    color:#ffffff;
+}
+#sidebarCollapse{
+    margin-right: 40px;
+}
+.media{
+    margin-bottom: 15px;
+}
+.card-img-top{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.fa-calendar-alt{
+    margin-left: 19%;
+}
+select{
+    margin-top: 5%;
+    margin-left: 30%;
+}
+.custom-select{
+    background-color:  rgb(253, 213, 0);
+    border-color:  rgb(253, 213, 0);
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+#sair{
+    margin-left: 35%;
+    margin-top: 80%;
+}
+/* ---------------------------------------------------
+    estilo do conteudo
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+#menu-item-um{
+    margin-right: 10px;
+}
+.grafico{
+    background-color: #47748b;
+    width: 100%;
+    height: 450px;
+}
+
+/*Menu resposivo*/
+
+@media (max-width: 768px) {
+    /*img {
+        display: none;
+    }*/
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #foto{
+        display: none;
+    }
+    #sair{
+        margin-left: 10%;
+        margin-top: 110%;
+    }
+    #sidebarCollapse{
+        transform: rotate(180deg);
+        margin-bottom: 10px;
+    }
+    select{
+        margin-top: 5%;
+        margin-left: 1%;
+    }
+    #menu-item-um{
+        margin-bottom: 10px;
+    }
+}

@@ -79,47 +79,53 @@
           <div class="card card-signin">
             <div class="card-body">
               <h5 class="card-title text-center">{{ __('Registre-se') }}</h5>
-              <form class="form-signin" method="POST" action="{{ route('register') }}">
-                @csrf
-                <div class="form-label-group">
-                  <input type="nome" id="inputNome" class="form-control @error('nome') is-invalid @enderror auto-" name="nome" placeholder="Nome" required autocomplete="nome" autofocus>
-                  <label for="inputNome">Nome</label>
-                  @error('nome')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror    
-                </div>
-                <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control  @error('email') is-invalid @enderror" name="email" placeholder="E-Mail" required>
-                  <label for="inputEmail">E-Mail</label>
-                  @error('email')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-                </div>
-                <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control  @error('password') is-invalid @enderror" name="password" placeholder="Senha" required autocomplete="new-password">
-                  <label for="inputPassword">Senha</label>
-                  @error('password')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-                </div>
-                <div class="form-label-group">
-                  <input type="password" id="input-confirm" class="form-control  @error('password') is-invalid @enderror" name="password_confirmation" placeholder="Confirme a senha" required>
-                  <label for="input-confirm">Confirme sua Senha</label>
-                  @error('password')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-                </div>
-                <button type="submit" class="btn btn-registrar btn-lg btn-block">{{ __('Registrar-se') }}</button> 
-            </form>
-          </div>
+                <form class="form-signin" method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="form-label-group">
+                        <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Nome" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <label for="name">Nome</label>
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
+                    </div>
+                    <div class="form-label-group">
+                        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="E-mail" value="{{ old('email') }}" required autocomplete="email">
+                        <label for="email">E-mail</label>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
+                    </div>
+                    <div class="form-label-group">
+                        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Senha" required autocomplete="new-password">
+                        <label for="password">Senha</label>
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
+                    </div>
+                    <div class="form-label-group">
+                        <input type="password" id="password-confirm" class="form-control" name="password_confirmation" placeholder="Confirme Sua Senha" required autocomplete="new-password">
+                        <label for="password-confirm">Confirme sua Senha</label>
+                        @error('password-confirm')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" class="btn btn-warning btn-block" id="registro_btn">
+                                {{ __('Registrar-se') }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
       </div>
     </div>

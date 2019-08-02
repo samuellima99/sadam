@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+Route::resource('perfil', 'PerfilController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

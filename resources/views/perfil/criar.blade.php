@@ -78,49 +78,44 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div class="card card-signin">
             <div class="card-body">
+            	 @if (session('erro'))
+                            <div class="alert alert-danger">
+                                {{ session('erro') }}
+                            </div>
+                @endif
               <h5 class="card-title text-center">{{ __('Registre-se') }}</h5>
-                <form class="form-signin" method="POST" action="{{ route('register') }}">
+                <form class="form-signin" method="POST" action="{{ route('perfil.store') }}" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-label-group">
-                        <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Nome" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                        <label for="name">Nome</label>
-                        @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror   
+
+                    <div class="form-group"> 
+                        <label>Foto do Perfil</label><br>
+                        <input class="" name="imagem" type="file">
                     </div>
-                    <div class="form-label-group">
-                        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="E-mail" value="{{ old('email') }}" required autocomplete="email">
-                        <label for="email">E-mail</label>
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror   
+                    <div class="form-group"> 
+                        <label>Nome</label><br>
+                        <input class="" name="nome" type="text" value="{{$user->name}}">
                     </div>
-                    <div class="form-label-group">
-                        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Senha" required autocomplete="new-password">
-                        <label for="password">Senha</label>
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror   
+                    <div class="form-group"> 
+                        <label>Endereço</label><br>
+                        <input class="" name="endereco" type="text">
                     </div>
-                    <div class="form-label-group">
-                        <input type="password" id="password-confirm" class="form-control" name="password_confirmation" placeholder="Confirme Sua Senha" required autocomplete="new-password">
-                        <label for="password-confirm">Confirme sua Senha</label>
-                        @error('password-confirm')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror   
+                    <div class="form-group"> 
+                        <label>Cidade</label><br>
+                        <input class="" name="cidade" type="text-center">
                     </div>
+                    <div class="form-group"> 
+                        <label>estado</label><br>
+                        <input class="" name="estado" type="text">
+                    </div>
+                    <div class="form-group"> 
+                        <label>CPF</label><br>
+                        <input class="" name="cpf" type="text">
+                    </div>
+                 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
                             <button type="submit" class="btn btn-warning btn-block" id="registro_btn">
-                                {{ __('Registrar-se') }}
+                                {{ __('Confirmar Perfil') }}
                             </button>
                         </div>
                     </div>

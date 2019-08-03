@@ -69,9 +69,9 @@
                 </div>
                 <button class="btn btn-block text-uppercase" type="submit" id="btn-login">Entrar</button>
                 <hr class="my-4">
-                <a class="btn btn-lg btn-cadastro btn-block" href="{{ route('register') }} "type="submit"><i class="fab fa-google mr-2"></i> Cadastre-se</a>
+                <a class="btn btn-lg btn-cadastro btn-block" href="{{ route('register') }} "type="submit">Cadastre-se</a>
                 @if (Route::has('password.request'))
-                  <a class="btn btn-lg btn-esqueceu-senha btn-block" href="{{ route('password.request') }}" type="submit"><i class="fab fa-facebook-f mr-2"></i> Esqueceu a Senha?</a>
+                  <a class="btn btn-lg btn-esqueceu-senha btn-block" href="{{ route('password.request') }}" type="submit">Esqueceu a Senha?</a>
                 @endif
               </form>
           </div>

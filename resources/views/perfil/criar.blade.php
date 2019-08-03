@@ -21,7 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/style_registro.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_perfil.css')}}">
 </head>
 <body>
     <div id="app">
@@ -62,7 +62,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Sair') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -91,33 +91,55 @@
                         <label>Foto do Perfil</label><br>
                         <input class="" name="imagem" type="file">
                     </div>
-                    <div class="form-group"> 
-                        <label>Nome</label><br>
-                        <input class="" name="nome" type="text" value="{{$user->name}}">
+                    <div class="form-label-group">
+                        <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="nome" placeholder="Nome" value="{{$user->name}}" required autocomplete="name" autofocus>
+                        <label for="name">Nome</label>
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
                     </div>
-                    <div class="form-group"> 
-                        <label>Endereço</label><br>
-                        <input class="" name="endereco" type="text">
+                    <div class="form-label-group">
+                        <input type="text" id="end" class="form-control @error('end') is-invalid @enderror" name="endereco" placeholder="Endereço" value="{{ old('Endereço') }}" required autocomplete="end" autofocus>
+                        <label for="end">Endereço</label>
+                        @error('end')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
                     </div>
-                    <div class="form-group"> 
-                        <label>Cidade</label><br>
-                        <input class="" name="cidade" type="text-center">
+                    <div class="form-label-group">
+                        <input type="text" id="city" class="form-control @error('city') is-invalid @enderror" name="cidade" placeholder="Cidade" value="{{ old('Cidade') }}" required autocomplete="Cidade" autofocus>
+                        <label for="city">Cidade</label>
+                        @error('city')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
                     </div>
-                    <div class="form-group"> 
-                        <label>estado</label><br>
-                        <input class="" name="estado" type="text">
+                    <div class="form-label-group">
+                        <input type="text" id="state" class="form-control @error('state') is-invalid @enderror" name="estado" placeholder="Estado" value="{{ old('Estado') }}" required autocomplete="Estado" autofocus>
+                        <label for="state">Estado</label>
+                        @error('state')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
                     </div>
-                    <div class="form-group"> 
-                        <label>CPF</label><br>
-                        <input class="" name="cpf" type="text">
+                    <div class="form-label-group">
+                        <input type="text" id="cpf" class="form-control @error('cpf') is-invalid @enderror" name="cpf" placeholder="CPF" value="{{ old('CPF') }}" required autocomplete="CPF" autofocus>
+                        <label for="cpf">CPF</label>
+                        @error('cpf')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
                     </div>
-                 
-                    <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-warning btn-block" id="registro_btn">
-                                {{ __('Confirmar Perfil') }}
-                            </button>
-                        </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-warning btn=lg btn-block" id="btn-registrar">
+                            {{ __('Confirmar Perfil') }}
+                        </button>
                     </div>
                 </form>
             </div>

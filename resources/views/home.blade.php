@@ -95,7 +95,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                               <a href="#" id="menu-item-um" class="btn btn-outline-warning ml-auto">Consulta Conta</a>
+                               <button type="button" id="menu-item-um" class="btn btn-outline-warning ml-auto" data-toggle="modal" data-target="#modal">Consulta Conta</button>  
                             </li>
                             <li class="nav-item">
                                <a href="#" id="menu-item-dois" class="btn btn-outline-warning">Minimizar Gastos</a>
@@ -104,6 +104,30 @@
                     </div>
                 </div>
             </nav>
+            <!-- Modal do consultar conta-->
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Conta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Nome:</p>
+                    <p>Estado:</p>
+                    <p>Cidade:</p>
+                    <p>Consumo:</p>
+                    <p>Data:</p>
+                    <p>Valor a Pagar:</b></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success">Pagar Conta</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="container">
                 <div class="row text-center">
                     <div class="col-12">
@@ -113,7 +137,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="grafico">
-
+                                    <canvas id="myChart" height="125px"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -123,6 +147,10 @@
         </div>
     </div>
 
+    <!--Chart CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <!--Importação do script do chart-->
+    <script src="{{asset('js/chart.js')}}"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->

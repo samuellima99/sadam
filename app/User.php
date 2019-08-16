@@ -37,7 +37,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-     public function perfil(){
+    public function perfil(){
         return $this->hasOne('App\Perfil');
+    }
+    public function energias(){
+        return $this->hasMany('App\Energia');
     }
 }

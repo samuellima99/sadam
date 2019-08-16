@@ -20,3 +20,6 @@ Route::resource('perfil', 'PerfilController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/energia/salvar/{user_id}/{valor}', 'EnergiaController@salvar')->name('salvar');
+Route::post('/energia/filtrar/', 'EnergiaController@filtrar')->name('filtrar');

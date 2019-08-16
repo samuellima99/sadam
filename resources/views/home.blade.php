@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="{{asset('css/style_dashboard.css')}}">
 </head>
 <body>
+    @php 
+        $data = date('Y');
+    @endphp
 <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
@@ -39,32 +42,278 @@
                 </div> 
             </div>
 
-            <div class="perfil text-center"><strong>Perfil do(a)</strong></div>
+            <div class="perfil text-center"><strong>Perfil do(a) {{$user->name}}</strong></div>
 
             <ul class="list-unstyled components text-center">
                 <li class="text-center" id="biografia">
-                    <i class="fas fa-map-marker-alt"></i> <strong>Endereço</strong>
+                    <i class="fas fa-map-marker-alt"></i> <strong>Endereço {{$user->perfil->endereco}}</strong>
                 </li>
             </ul>
-
-            <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
-            <div class="form-group col-md-8">
-                <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Mês</option>
-                    <option value="1">Janeiro</option>
-                    <option value="2">Fevereiro</option>
-                    <option value="3">Março</option>
-                    <option value="4">Abril</option>
-                    <option value="5">Maio</option>
-                    <option value="6">Junho</option>
-                    <option value="7">Julho</option>
-                    <option value="8">Agosto</option>
-                    <option value="9">Setembro</option>
-                    <option value="10">Outubro</option>
-                    <option value="11">Novembro</option>
-                    <option value="12">Dezembro</option>
-                </select>
-            </div>
+            @if($mes == 1)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1" selected>Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 2)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2"  selected>Fevereiro  de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 3)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3" selected>Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 4)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4"  selected>Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 5)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5" selected>Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 6)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6"  selected>Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 7)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7" selected>Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 8)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8" selected>Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 9)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9" selected>Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 10)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10" selected>Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 11)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11" selected>Novembro de {{$data}}</option>
+                        <option value="12">Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @elseif($mes == 12)
+            <form method="POST" action="{{route('filtrar')}}">
+                @csrf
+                <i class="fas fa-calendar-alt"></i> <strong class="mes">Selecione um mês</strong>
+                <div class="form-group col-md-10">
+                    <select class="custom-select" id="inputGroupSelect01" name="valor">
+                        <option value="1">Janeiro de {{$data}}</option>
+                        <option value="2">Fevereiro de {{$data}}</option>
+                        <option value="3">Março de {{$data}}</option>
+                        <option value="4">Abril de {{$data}}</option>
+                        <option value="5">Maio de {{$data}}</option>
+                        <option value="6">Junho de {{$data}}</option>
+                        <option value="7">Julho de {{$data}}</option>
+                        <option value="8">Agosto de {{$data}}</option>
+                        <option value="9">Setembro de {{$data}}</option>
+                        <option value="10">Outubro de {{$data}}</option>
+                        <option value="11">Novembro de {{$data}}</option>
+                        <option value="12" selected>Dezembro de {{$data}}</option>
+                    </select>
+                    <button type="submit">></button>
+                </div>
+            </form>
+            @endif
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a  href="{{ route('logout') }}"
@@ -131,7 +380,33 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-12">
-                        <h3 class="display-5">Gráfico</h3>
+                        <h3 class="display-5">Gráfico de 
+                            @if($mes == 1)
+                                {{'Janeiro'}}
+                            @elseif($mes == 2)
+                                {{'Fevereiro'}}
+                            @elseif($mes == 3)
+                                {{'Março'}}
+                            @elseif($mes == 4)
+                                {{'Abril'}}
+                            @elseif($mes == 5)
+                                {{'Maio'}}
+                            @elseif($mes == 6)
+                                {{'Junho'}}
+                            @elseif($mes == 7)
+                                {{'Julho'}}
+                            @elseif($mes == 8)
+                                {{'Agosto'}}
+                            @elseif($mes == 9)
+                                {{'Setembro'}}
+                            @elseif($mes == 10)
+                                {{'Outubro'}}
+                            @elseif($mes == 11)
+                                {{'Novembro'}}
+                            @elseif($mes == 12)
+                                {{'Dezembro'}}
+                            @endif
+                        </h3>
                         <hr>
                         <!--Aqui vai ficar os gráficos-->
                         <div class="row">
@@ -150,7 +425,7 @@
     <!--Chart CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
     <!--Importação do script do chart-->
-    <script src="{{asset('js/chart.js')}}"></script>
+    <!-- <script src="{{asset('js/chart.js')}}"></script> -->
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -164,6 +439,370 @@
                 $('#sidebar').toggleClass('active');
             });
         });
+
+        var mes = {{$mes}};
+
+        if(mes == 1){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30', 'Dia 31'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}, {{$dia[30]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 2){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 3){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30', 'Dia 31'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}, {{$dia[30]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 4){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 5){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30', 'Dia 31'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}, {{$dia[30]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 6){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 7){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30', 'Dia 31'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}, {{$dia[30]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 8){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30', 'Dia 31'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}, {{$dia[30]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 9){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 10){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30', 'Dia 31'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}, {{$dia[30]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 11){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28','Dia 29', 'Dia 30'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }else if(mes == 12){
+            var ctx = document.getElementById('myChart').getContext('2d'); 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10', 'Dia 11', 'Dia 12', 'Dia 13', 'Dia 14', 'Dia 15', 'Dia 16', 'Dia 17', 'Dia 18', 'Dia 19', 'Dia 20', 'Dia 21', 'Dia 22', 'Dia 23', 'Dia 24', 'Dia 25', 'Dia 26', 'Dia 27', 'Dia 28', 'Dia 29', 'Dia 30', 'Dia 31'], 
+                    datasets: [{
+                        label: 'Consumo em R$',
+                        data: [
+                            {{$dia[0]}}, {{$dia[1]}}, {{$dia[2]}}, {{$dia[3]}}, {{$dia[4]}}, {{$dia[5]}}, {{$dia[6]}}, {{$dia[7]}}, {{$dia[8]}}, {{$dia[9]}}, {{$dia[10]}}, {{$dia[11]}}, {{$dia[12]}}, {{$dia[13]}}, {{$dia[14]}}, {{$dia[15]}}, {{$dia[16]}}, {{$dia[17]}}, {{$dia[18]}}, {{$dia[19]}}, {{$dia[20]}}, {{$dia[21]}}, {{$dia[22]}}, {{$dia[23]}}, {{$dia[24]}}, {{$dia[25]}}, {{$dia[26]}}, {{$dia[27]}}, {{$dia[28]}}, {{$dia[29]}}, {{$dia[30]}}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
     </script>
    
 </body>

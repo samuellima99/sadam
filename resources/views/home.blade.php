@@ -42,11 +42,11 @@
                 </div> 
             </div>
 
-            <div class="perfil text-center"><strong>Perfil do(a) {{$user->name}}</strong></div>
+            <div class="perfil text-center"><strong>Perfil do(a): {{$user->name}}</strong></div>
 
             <ul class="list-unstyled components text-center">
                 <li class="text-center" id="biografia">
-                    <i class="fas fa-map-marker-alt"></i> <strong>Endereço {{$user->perfil->endereco}}</strong>
+                    <i class="fas fa-map-marker-alt"></i> <strong>Endereço: {{$user->perfil->endereco}}</strong>
                 </li>
             </ul>
             @if($mes == 1)
@@ -68,8 +68,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 2)
             <form method="POST" action="{{route('filtrar')}}">
@@ -90,8 +90,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 3)
             <form method="POST" action="{{route('filtrar')}}">
@@ -112,8 +112,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 4)
             <form method="POST" action="{{route('filtrar')}}">
@@ -134,8 +134,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 5)
             <form method="POST" action="{{route('filtrar')}}">
@@ -156,8 +156,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 6)
             <form method="POST" action="{{route('filtrar')}}">
@@ -178,8 +178,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 7)
             <form method="POST" action="{{route('filtrar')}}">
@@ -200,8 +200,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 8)
             <form method="POST" action="{{route('filtrar')}}">
@@ -222,8 +222,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
-                </div>
+                </div>       
+                <button type="submit" class="btn btn-data">></button>         
             </form>
             @elseif($mes == 9)
             <form method="POST" action="{{route('filtrar')}}">
@@ -244,8 +244,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 10)
             <form method="POST" action="{{route('filtrar')}}">
@@ -266,8 +266,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 11)
             <form method="POST" action="{{route('filtrar')}}">
@@ -288,8 +288,8 @@
                         <option value="11" selected>Novembro de {{$data}}</option>
                         <option value="12">Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @elseif($mes == 12)
             <form method="POST" action="{{route('filtrar')}}">
@@ -310,8 +310,8 @@
                         <option value="11">Novembro de {{$data}}</option>
                         <option value="12" selected>Dezembro de {{$data}}</option>
                     </select>
-                    <button type="submit">></button>
                 </div>
+                <button type="submit" class="btn btn-data">></button>
             </form>
             @endif
             <ul class="navbar-nav ml-auto">

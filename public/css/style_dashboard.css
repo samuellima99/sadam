@@ -191,7 +191,12 @@ ul ul a {
 }
 select{
     margin-top: 5%;
-    margin-left: 30%;
+    margin-left: 8%;
+}
+.btn-data{
+    margin-left: 85%;
+    margin-top: -38%;
+    background-color: rgb(255, 255, 255);
 }
 .custom-select{
     background-color:  rgb(253, 213, 0);
@@ -201,7 +206,7 @@ select{
 }
 #sair{
     margin-left: 35%;
-    margin-top: 80%;
+    margin-top: 70%;
 }
 /* ---------------------------------------------------
     estilo do conteúdo

@@ -110,22 +110,17 @@
                         @enderror   
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="city" class="form-control @error('city') is-invalid @enderror" name="cidade" placeholder="Cidade" value="{{ old('Cidade') }}" required autocomplete="Cidade" autofocus>
-                        <label for="city">Cidade</label>
-                        @error('city')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror   
+                        <select type="text" id="city" class="form-control @error('city') is-invalid @enderror" name="cidade" placeholder="Cidade" value="{{ old('Cidade') }}" required autocomplete="Cidade" autofocus>
+                            <option selected>Cidade</option>
+                            <option>Icó</option>
+                        </select>   
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="state" class="form-control @error('state') is-invalid @enderror" name="estado" placeholder="Estado" value="{{ old('Estado') }}" required autocomplete="Estado" autofocus>
-                        <label for="state">Estado</label>
-                        @error('state')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror   
+                        <select type="text" id="state" class="form-control @error('state') is-invalid @enderror" name="estado" placeholder="Estado" value="{{ old('Estado') }}" required autocomplete="Estado" autofocus>
+                            <option selected>Estado</option>
+                            <option>Ceará</option>
+                        </select>
+                         
                     </div>
                     <div class="form-label-group">
                         <input type="text" id="cpf" class="form-control @error('cpf') is-invalid @enderror" name="cpf" placeholder="CPF" value="{{ old('CPF') }}" required autocomplete="CPF" autofocus>

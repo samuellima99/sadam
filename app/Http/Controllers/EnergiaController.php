@@ -14,7 +14,7 @@ class EnergiaController extends Controller
         $ano = date('Y');
 
         $energia = new Energia;
-        $energia->valor = $valor;
+        $energia->valor = 0.00251542;
         $energia->user_id = $id;
         $energia->dia = $dia;
         $energia->mes = $mes;
@@ -31,6 +31,7 @@ class EnergiaController extends Controller
     	$user = auth()->user();
 	   	$mes = $request->input('valor');
         $ano = date('Y');
+        $dataF = date('d/m/Y');
 
         for($i=0;$i<=30;$i++){
             $dia[$i]=0.0;
@@ -104,11 +105,32 @@ class EnergiaController extends Controller
             }
         }
 
-        // for($i=0;$i<=30;$i++){
-        //     $soma = $i+1;
-        //     echo "Dia $soma: ".$dia[$i]."<br>";
-        // }
+        $consumo = 0;
+        $consumoPIS = 0;
+        $consumoCONFINS = 0;
+        $consumoICMS = 0;
+        $total = 0;
 
-        return view('home', ['user' => $user, 'mes' => $mes, 'dia' => $dia]);
+        foreach($dia as $d){
+            $consumo = $consumo + $d;
+        }
+
+        $consumo = round ($consumo, 2);
+
+        if($consumo > 38.08){
+            $consumoICMS = ($consumo * 0.27);
+            $consumoICMS = round ($consumoICMS, 2);
+        }
+
+        $consumoPIS = ($consumo * 0.0135);
+        $consumoPIS = round ($consumoPIS, 2);
+
+        $consumoCONFINS = ($consumo * 0.0616);
+        $consumoCONFINS = round ($consumoCONFINS, 2);
+
+        $total = $consumo+$consumoCONFINS+$consumoPIS+$consumoICMS;
+
+
+        return view('home', ['user' => $user, 'mes' => $mes, 'dia' => $dia, 'consumo'=>$consumo, 'data'=>$ano, 'dataF'=>$dataF, 'consumoICMS'=>$consumoICMS, 'consumoPIS'=>$consumoPIS, 'consumoCONFINS'=>$consumoCONFINS, 'total'=>$total]);
     }
 }

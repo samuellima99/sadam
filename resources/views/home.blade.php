@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="{{asset('css/style_dashboard.css')}}">
 </head>
 <body>
-    @php 
-        $data = date('Y');
-    @endphp
+    
 <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
@@ -42,13 +40,15 @@
                 </div> 
             </div>
 
-            <div class="perfil text-center"><strong>Perfil do(a): {{$user->name}}</strong></div>
+            <div class="perfil text-center"><strong>{{$user->name}}</strong></div>
 
             <ul class="list-unstyled components text-center">
                 <li class="text-center" id="biografia">
-                    <i class="fas fa-map-marker-alt"></i> <strong>Endereço: {{$user->perfil->endereco}}</strong>
+                    <i class="fas fa-map-marker-alt"></i> <strong>Endereço: {{$user->perfil->endereco}}, {{$user->perfil->cidade}}</strong>
                 </li>
+                <li><strong>CPF: {{$user->perfil->cpf}}</strong></li>
             </ul>
+            
             @if($mes == 1)
             <form method="POST" action="{{route('filtrar')}}">
                 @csrf
@@ -364,12 +364,16 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <p>Nome:</p>
-                    <p>Estado:</p>
-                    <p>Cidade:</p>
-                    <p>Consumo:</p>
-                    <p>Data:</p>
-                    <p>Valor a Pagar:</b></p>
+                    <p><strong>Nome: </strong>{{$user->perfil->nome}}</p>
+                    <p><strong>Cidade: </strong>{{$user->perfil->cidade}}</p>
+                    <p><strong>Estado: </strong>{{$user->perfil->estado}}</p>
+                    <p><strong>Data: </strong>{{$dataF}}</p>
+                    <p><strong>Consumo (kwh/R$): </strong>{{$consumo}} R$</p>
+                    <p><strong>ICMS: </strong>{{$consumoICMS}} R$</p>
+                    <p><strong>PIS: </strong>{{$consumoPIS}} R$</p>
+                    <p><strong>CONFINS: </strong>{{$consumoCONFINS}} R$</p>
+                    <p><br></p>
+                    <p><strong>Valor a Pagar: {{$total}} R$</strong></b></p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-outline-success">Pagar Conta</button>

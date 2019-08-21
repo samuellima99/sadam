@@ -27,6 +27,7 @@ class HomeController extends Controller
         $user = auth()->user();
         $mes = date('m');
         $ano = date('Y');
+        $dataF = date('d/m/Y');
 
         for($i=0;$i<=30;$i++){
             $dia[$i]=0.0;
@@ -100,11 +101,32 @@ class HomeController extends Controller
             }
         }
 
-        // for($i=0;$i<=30;$i++){
-        //     $soma = $i+1;
-        //     echo "Dia $soma: ".$dia[$i]."<br>";
-        // }
+        $consumo = 0;
+        $consumoICMS = 0;
+        $consumoPIS = 0;
+        $consumoCONFINS = 0;
+        $total = 0;
 
-        return view('home', ['user' => $user, 'mes' => $mes, 'dia' => $dia]);
+        foreach($dia as $d){
+            $consumo = $consumo + $d;
+        }
+
+        $consumo = round ($consumo, 2);
+
+        if($consumo > 38.08){
+            $consumoICMS = ($consumo * 0.27);
+            $consumoICMS = round ($consumoICMS, 2);
+        }
+
+        $consumoPIS = ($consumo * 0.0135);
+        $consumoPIS = round ($consumoPIS, 2);
+
+        $consumoCONFINS = ($consumo * 0.0616);
+        $consumoCONFINS = round ($consumoCONFINS, 2);
+
+        $total = $consumo+$consumoCONFINS+$consumoPIS+$consumoICMS;
+
+
+        return view('home', ['user' => $user, 'mes' => $mes, 'dia' => $dia, 'consumo'=>$consumo, 'data'=>$ano, 'dataF'=>$dataF, 'consumoICMS'=>$consumoICMS, 'consumoPIS'=>$consumoPIS, 'consumoCONFINS'=>$consumoCONFINS, 'total'=>$total]);
     }
 }

@@ -110,6 +110,15 @@
                         @enderror   
                     </div>
                     <div class="form-label-group">
+                        <input type="text" id="cpf" class="form-control @error('cpf') is-invalid @enderror" name="cpf" placeholder="CPF" value="{{ old('CPF') }}" required autocomplete="CPF" autofocus>
+                        <label for="cpf">CPF</label>
+                        @error('cpf')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror   
+                    </div>
+                    <div class="form-label-group">
                         <select type="text" id="city" class="form-control @error('city') is-invalid @enderror" name="cidade" placeholder="Cidade" value="{{ old('Cidade') }}" required autocomplete="Cidade" autofocus>
                             <option selected>Cidade</option>
                             <option>Icó</option>
@@ -121,15 +130,6 @@
                             <option>Ceará</option>
                         </select>
                          
-                    </div>
-                    <div class="form-label-group">
-                        <input type="text" id="cpf" class="form-control @error('cpf') is-invalid @enderror" name="cpf" placeholder="CPF" value="{{ old('CPF') }}" required autocomplete="CPF" autofocus>
-                        <label for="cpf">CPF</label>
-                        @error('cpf')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror   
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-warning btn=lg btn-block" id="btn-registrar">
